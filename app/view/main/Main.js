@@ -7,6 +7,7 @@
  */
 Ext.define('ResourceManager.view.main.Main', {
     extend: 'Ext.container.Container',
+    requires:['ResourceManager.view.DivisionList'],
 
     xtype: 'app-main',
     
@@ -36,8 +37,7 @@ Ext.define('ResourceManager.view.main.Main', {
         region: 'center',
         xtype: 'tabpanel',
         items:[{
-            title: 'Tab 1',
-            html: '<h2>Content appropriate for the current navigation.</h2>'
+            xtype: 'divisionlist-grid'
         }]
     }]
 });
