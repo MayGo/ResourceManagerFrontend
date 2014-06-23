@@ -1,46 +1,31 @@
 Ext.define('ResourceManager.view.DivisionListController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.divisionlist',
+	extend : 'Ext.app.ViewController',
+	alias : 'controller.divisionlist',
 
-    // Used as a column renderer by BigData: resolved using defaultListenerScope
-    concatNames: function(v, cellValues, rec) {
-        return rec.get('forename') + ' ' + rec.get('surname');
-    },
+	// Used as an editRenderer by BigData to display an uneditable field in the RowEditor
+	bold : function(v) {
+		return "<b>" + v + "</b>";
+	},
 
-    // Used as an editRenderer by BigData to display an uneditable field in the RowEditor
-    bold: function(v) {
-        return "<b>" + v + "</b>";
-    },
+	addItemHandler : function() {
+		Ext.getStore('DivisionList').insert(0, Ext.create('ResourceManager.model.Division'));
+		var grid = this.view, plugin = grid.getPlugin('rowediting');
+		plugin.startEdit(0, 0);
+	},
+	deleteItemHandler : function() {
+		var grid = this.view;
+		var selection = grid.getView().getSelectionModel().getSelection()[0];
+		if (selection) {
+			Ext.getStore('DivisionList').remove(selection);
+		}
+	},
 
-    onNameFilterKeyup: function() {
-        var grid = this.getView(),
-            // Access the field using its "reference" property name.
-            filterField = this.lookupReference('nameFilterField'),
-            filters = grid.store.getFilters();
+	onSelectionChangeListener : function(model, selection) {
+		var grid = this.view;
+		grid.down('#delete').setDisabled(selection.length === 0);
+	},
 
-        if (filterField.value) {
-            this.nameFilter = filters.add({
-                id            : 'nameFilter',
-                property      : 'name',
-                value         : filterField.value,
-                anyMatch      : true,
-                caseSensitive : false
-            });
-        } else if (this.nameFilter) {
-            filters.remove(this.nameFilter);
-            this.nameFilter = null;
-        }
-    },
+	init : function() {
 
-    init: function() {
-        // RowEditing not appropriate for touch devices
-        if (!Ext.supports.Touch) {
-            // Plugins are instantiated at this time, we must add an instantiated Plugin, not a config
-            this.getView().getPlugins().push(Ext.create({
-                xclass: 'Ext.grid.plugin.RowEditing',
-                clicksToMoveEditor: 1,
-                autoCancel: false
-            }));
-        }
-    }
+	}
 });
