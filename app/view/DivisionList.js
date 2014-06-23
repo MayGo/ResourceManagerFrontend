@@ -36,19 +36,34 @@ Ext.define('ResourceManager.view.DivisionList', {
 		dataIndex : 'name',
 		groupable : false,
 		width : 140,
-		//renderer: 'concatNames',
 		editor : {
 			xtype : 'textfield'
+		}
+	}, 
+	/*{
+		text : 'Head division',
+		sortable : true,
+		dataIndex : 'headDivisionId',
+		mapping: function(data) {
+		    return data.headDivision.id;
 		},
-	}, {
+		groupable : false,
+		width : 140,
+		reference: {
+             parent: 'ResourceManager.model.Division' // Organization is the parent of User
+        }
+	}, */{
 		text : 'NameTrail',
 		sortable : true,
 		dataIndex : 'nameTrail',
+		groupable : true,
+		locked : true
+	}, {
+		text : 'IdTrail',
+		sortable : true,
+		dataIndex : 'idTrail',
 		groupable : false,
-		width : 140,
-		editor : {
-			xtype : 'textfield'
-		},
+		locked : true
 	}],
 	dockedItems : [{
 		xtype : 'toolbar',
