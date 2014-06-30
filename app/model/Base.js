@@ -13,7 +13,18 @@ Ext.define('ResourceManager.model.Base', {
 
 		proxy : {
 			type : 'rest',
-			url : 'http://localhost:8080/ResourceManager/{entityName:uncapitalize}s'
+			
+			url : 'http://localhost:8080/ResourceManager/{entityName:uncapitalize}s',
+			reader: {
+			    type : 'json',
+			    rootProperty : 'list',
+			    totalProperty  : 'total'
+			},
+			startParam:'offset',
+			limitParam:'max'
+			//sortParam:'',
+		//	groupParam:'',
+			//filterParam:''
 		}
 	}
 });

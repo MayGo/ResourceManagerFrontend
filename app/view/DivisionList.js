@@ -4,14 +4,21 @@ Ext.define('ResourceManager.view.DivisionList', {
 	xtype : 'divisionlist-grid',
 	store : 'DivisionList',
 	columnLines : true,
+	//loadMask: true,
 	height : 400,
 	width : 910,
-	title : 'Editable Big Data Grid',
+	title : 'Divisions',
 	multiColumnSort : true,
+	multiSelect: true,
+/*	viewConfig: {
+            trackOver: false,
+            emptyText: '<h1 style="margin:20px">No matching results</h1>'
+        },*/
 	requires : ['ResourceManager.view.DivisionListController'],
 
 	controller : 'divisionlist',
-	selModel : {
+	selModel : { 
+		pruneRemoved: false,
 		listeners : {
 			selectionchange : 'onSelectionChangeListener'
 		}
@@ -56,16 +63,32 @@ Ext.define('ResourceManager.view.DivisionList', {
 		text : 'NameTrail',
 		sortable : true,
 		dataIndex : 'nameTrail',
-		groupable : true,
-		locked : true
+		groupable : true
 	}, {
 		text : 'IdTrail',
 		sortable : true,
 		dataIndex : 'idTrail',
-		groupable : false,
-		locked : true
+		groupable : false
 	}],
 	dockedItems : [{
+		dock: 'top',
+		xtype : 'toolbar',
+		items : [{
+                width: 400,
+                fieldLabel: 'Search',
+                labelWidth: 50,
+                xtype: 'searchfield'
+                ,            store: 'DivisionList'
+            }, '->', {
+                xtype: 'component',
+                itemId: 'status',
+                tpl: 'Matching threads: {count}',
+                style: 'margin-right:5px'
+            }
+		]
+	},
+	{
+		dock: 'bottom',
 		xtype : 'toolbar',
 		items : [{
 			text : 'Add',
@@ -77,7 +100,8 @@ Ext.define('ResourceManager.view.DivisionList', {
 			iconCls : 'icon-delete',
 			disabled : true,
 			handler : 'deleteItemHandler'
-		}]
+		},
+		]
 	}],
 	viewConfig : {
 		stripeRows : true
