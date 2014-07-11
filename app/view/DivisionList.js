@@ -25,11 +25,6 @@ Ext.define('ResourceManager.view.DivisionList', {
 	},
 
 	columns : [{
-		xtype : 'rownumberer',
-		width : 40,
-		sortable : false,
-		locked : true
-	}, {
 		text : 'ID',
 		width : 50,
 		sortable : true,
@@ -102,7 +97,12 @@ Ext.define('ResourceManager.view.DivisionList', {
 			handler : 'deleteItemHandler'
 		},
 		]
-	}],
+	},{
+        xtype: 'pagingtoolbar',
+        store: 'DivisionList',   // same store GridPanel is using
+        dock: 'bottom',
+        displayInfo: true
+    }],
 	viewConfig : {
 		stripeRows : true
 	},
