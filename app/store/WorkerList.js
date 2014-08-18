@@ -1,7 +1,7 @@
-Ext.define('ResourceManager.store.DivisionList', {
+Ext.define('ResourceManager.store.WorkerList', {
 	extend : 'Ext.data.Store',
 	requires : [ 'Ext.data.proxy.Rest' ],
-	model : 'ResourceManager.model.Division',
+	model : 'ResourceManager.model.Worker',
 	autoLoad : true,
 	autoSync : true,
 	pageSize : 50,
@@ -18,7 +18,7 @@ Ext.define('ResourceManager.store.DivisionList', {
 			}
 			//TODO:replace with note in sidebar
 			Ext.MessageBox.show({
-				msg : Ext.String.format("{0} Division: {1}", verb, record.getId()),
+				msg : Ext.String.format("{0} Worker: {1}", verb, record.getId()),
 				icon : Ext.MessageBox.INFO,
 				buttons : Ext.Msg.OK
 			});

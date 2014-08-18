@@ -7,11 +7,24 @@
  */
 Ext.define('ResourceManager.view.main.Main', {
     extend: 'Ext.container.Container',
-    requires:['ResourceManager.view.DivisionList'],
+    requires:[
+	
+		'ResourceManager.view.asset.List',
+	
+		'ResourceManager.view.division.List',
+	
+		'ResourceManager.view.laborforce.List',
+	
+		'ResourceManager.view.stringTest.List',
+	
+		'ResourceManager.view.typeTest.List',
+	
+		'ResourceManager.view.worker.List',
+	
+	],
 
     xtype: 'app-main',
     
-    controller: 'main',
     viewModel: {
         type: 'main'
     },
@@ -36,8 +49,33 @@ Ext.define('ResourceManager.view.main.Main', {
     },{
         region: 'center',
         xtype: 'tabpanel',
-        items:[{
+        id: 'myTabpanel',
+        items:[
+		
+		{
+            xtype: 'assetlist-grid'
+        },
+	
+		{
             xtype: 'divisionlist-grid'
-        }]
+        },
+	
+		{
+            xtype: 'laborforcelist-grid'
+        },
+	
+		{
+            xtype: 'stringTestlist-grid'
+        },
+	
+		{
+            xtype: 'typeTestlist-grid'
+        },
+	
+		{
+            xtype: 'workerlist-grid'
+        },
+	
+		]
     }]
 });

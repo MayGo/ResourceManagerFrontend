@@ -17,7 +17,20 @@ Ext.define('ResourceManager.Application', {
         // TODO: add controllers here
     ],
 
-    stores: ['DivisionList'
+    stores: [
+	
+		'AssetList',
+	
+		'DivisionList',
+	
+		'LaborforceList',
+	
+		'StringTestList',
+	
+		'TypeTestList',
+	
+		'WorkerList',
+	
         // TODO: add stores here
     ],
     

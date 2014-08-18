@@ -1,2 +1,2 @@
 // @tag full-page
-// @require c:\SOURCES\ResourceManager\app.js
+// @require C:\SOURCES\ResourceManagerFrontend\app.js
