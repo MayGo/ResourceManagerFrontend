@@ -18,6 +18,7 @@ Ext.define('ResourceManager.Application', {
     ],
 
     stores: [
+             'MenuItems',
 	
 		'AssetList',
 	
