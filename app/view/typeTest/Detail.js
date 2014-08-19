@@ -1,110 +1,182 @@
+
 Ext.define('ResourceManager.view.typeTest.Detail', {
-    extend: 'Ext.panel.Panel',
+    extend: 'ResourceManager.view.BaseDetailView',
     alias: 'widget.typetestdetail',
     
     requires: [
         'ResourceManager.view.typeTest.DetailModel',
-        'ResourceManager.view.typeTest.DetailController',
-        'Ext.form.Panel',
-        'Ext.form.field.Text',
-        'Ext.form.field.TextArea',
-        'Ext.layout.container.VBox',
-        'Ext.form.field.ComboBox',
-        'Ext.view.View'
+        'ResourceManager.view.typeTest.DetailController'
     ],
-    
-    bind: {
-        title: '{theDomainObject.uniqueName}'
-    },
-    
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
-    
+  
     componentCls: 'typetest-detail',
-    bodyPadding: 20,
     
     controller: 'typetestdetail',
     viewModel: {
         type: 'typetestdetail'
     },
     
-    tbar: [{
-        text: 'Save',
-        handler: 'onSaveClick'
-    }],
+  
     
-    items: [{
-        xtype: 'component',
-        bind: '{theDomainObject.uniqueName}',
-        cls: 'title',
-        margin: '0 0 20 0'
-    }, {
-        xtype: 'form',
-        border: false,
-        maxWidth: 600,
-        height: 100,
-        reference: 'form',
-        defaults: {
-            anchor: '95%'
-        },
-        items: [{
-            xtype: 'textfield',
-            fieldLabel: 'Title',
-            allowBlank: false,
-            bind: '{theDomainObject.uniqueName}',
-            publishes: ['value']
-        }/*, {
-            xtype: 'combobox',
-            fieldLabel: 'Assignee',
-            allowBlank: false,
-            forceSelection: true,
-            queryMode: 'local',
-            valueField: 'id',
-            displayField: 'name',
-            publishes: ['value'],
-            bind: {
-                store: '{theAsset.project.users}',
-                value: '{theAsset.assigneeId}'
-            }
-        }, {
-            xtype: 'combobox',
-            fieldLabel: 'Status',
-            allowBlank: false,
-            forceSelection: true,
-            editable: false,
-            queryMode: 'local',
-            valueField: 'id',
-            displayField: 'name',
-            publishes: ['value'],
-            bind: '{theAsset.status}',
-            store: {
-                fields: ['id', 'name'],
-                data: [
-                    { id: 1, name: 'Pending' },
-                    { id: 2, name: 'Open' },
-                    { id: 3, name: 'Closed' }
-                ]
-            }
-        }*/]
-    }/*, {
-        xtype: 'component',
-        html: 'Comments',
-        cls: 'small-title',
-        margin: '20 0'
-    }, {
-        xtype: 'dataview',
-        flex: 1,
-        bind: '{theResourceManager.comments}',
-        disableSelection: true,
-        cls: 'comments',
-        autoScroll: true,
-        emptyText: 'There are no comments',
-        itemTpl: [
-            '<div class="header"><span class="created">{created:date("Y-m-d H:i")}</span> - <span class="user">{user.name}</span></div>',
-            '<div class="content">{text}</div>',
-            '<tpl if="xindex !== xcount"><hr /></tpl>'
-        ]
-    }*/]
+    items: [
+		
+			{
+	            fieldLabel: 'Test Boolean',
+	            name:'testBoolean',
+	            bind: '{theDomainObject.testBoolean}',
+
+				
+				xtype : 'checkbox'
+			
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Byte',
+	            name:'testByte',
+	            bind: '{theDomainObject.testByte}',
+
+				xtype : 'numberfield'
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Int',
+	            name:'testInt',
+	            bind: '{theDomainObject.testInt}',
+
+				xtype : 'numberfield', minValue: 2, maxValue: 25
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Int In List',
+	            name:'testIntInList',
+	            bind: '{theDomainObject.testIntInList}',
+
+				xtype : 'combo', store : ['1', '2', '5'] 
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Int Range',
+	            name:'testIntRange',
+	            bind: '{theDomainObject.testIntRange}',
+
+				xtype : 'combo', store : [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Long',
+	            name:'testLong',
+	            bind: '{theDomainObject.testLong}',
+
+				xtype : 'numberfield'
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Double',
+	            name:'testDouble',
+	            bind: '{theDomainObject.testDouble}',
+
+				xtype : 'numberfield'
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Scale',
+	            name:'testScale',
+	            bind: '{theDomainObject.testScale}',
+
+				xtype : 'numberfield'
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Date',
+	            name:'testDate',
+	            bind: '{theDomainObject.testDate}',
+
+				 	
+				xtype : 'datefield',
+		 		format: 'Y-m-d',
+			
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test String',
+	            name:'testString',
+	            bind: '{theDomainObject.testString}',
+
+				
+			xtype : 'textfield'
+		
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Enum',
+	            name:'testEnum',
+	            bind: '{theDomainObject.testEnum}',
+
+				
+				xtype : 'combo',
+				store : ['YES', 'NO', 'NOWAY']
+			
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Currency',
+	            name:'testCurrency',
+	            bind: '{theDomainObject.testCurrency}',
+
+				
+				xtype : 'combo',
+				store : []
+			
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Locale',
+	            name:'testLocale',
+	            bind: '{theDomainObject.testLocale}',
+
+				
+				xtype : 'combo',
+				store : []
+			
+
+				
+			},
+		
+			{
+	            fieldLabel: 'Test Time Zone',
+	            name:'testTimeZone',
+	            bind: '{theDomainObject.testTimeZone}',
+
+				
+				xtype : 'combo',
+				store : []
+			
+
+				
+			},
+		        
+    ]
 });
