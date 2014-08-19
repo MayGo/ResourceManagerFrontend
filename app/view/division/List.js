@@ -45,7 +45,7 @@ Ext.define('ResourceManager.view.division.List', {
 				  valueField: 'id',
 				  tpl:'<tpl for="."><div class="x-boundlist-item" >Object id: {id}</div></tpl>',
 				  displayTpl: '<tpl for=".">Object id: {id}</tpl>',
-				  store: 'Head DivisionList',
+				  store: 'DivisionList',
 			  }
 			
 
