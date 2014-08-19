@@ -16,8 +16,21 @@ Ext.define('ResourceManager.view.division.Detail', {
     },
     
   
-    
-    items: [
+    items: [{
+        xtype: 'component',
+        bind: '{theDomainObject.uniqueName}',
+        cls: 'title',
+        margin: '0 0 20 0'
+    }, {
+        xtype: 'form',
+        border: false,
+        maxWidth: 400,
+        reference: 'form',
+        defaults: {
+            anchor: '95%'
+        },
+        items: [
+
 		
 			{
 	            fieldLabel: 'Name',
@@ -71,5 +84,6 @@ Ext.define('ResourceManager.view.division.Detail', {
 				
 			},
 		        
-    ]
+		]
+    }]
 });

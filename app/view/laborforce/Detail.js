@@ -16,8 +16,21 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
     },
     
   
-    
-    items: [
+    items: [{
+        xtype: 'component',
+        bind: '{theDomainObject.uniqueName}',
+        cls: 'title',
+        margin: '0 0 20 0'
+    }, {
+        xtype: 'form',
+        border: false,
+        maxWidth: 400,
+        reference: 'form',
+        defaults: {
+            anchor: '95%'
+        },
+        items: [
+
 		
 			{
 	            fieldLabel: 'Worker',
@@ -93,5 +106,6 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 				
 			},
 		        
-    ]
+		]
+    }]
 });
