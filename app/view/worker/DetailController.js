@@ -16,7 +16,7 @@ Ext.define('ResourceManager.view.worker.DetailController', {
             rec;
         
         if (form.isValid()) {
-            rec = this.getViewModel().getData().theAsset;
+            rec = this.getViewModel().getData().theDomainObject;
             // TODO: implement isolated sessions
             Ext.Msg.wait('Saving', 'Saving worker...');
             rec.save({

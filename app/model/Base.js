@@ -11,7 +11,7 @@ Ext.define('ResourceManager.model.Base', {
 		name : 'uniqueName',
 		type : 'string',
 		convert : function(newValue, model) {
-			return Ext.getDisplayName(model).split(".").pop() + " " + model.get('id');
+			return Ext.getDisplayName(model).split(".").pop() + " " + (model.get('id')?model.get('id'):"[new]");
 		}
 	}
 	],

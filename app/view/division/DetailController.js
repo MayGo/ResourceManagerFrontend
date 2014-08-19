@@ -16,7 +16,7 @@ Ext.define('ResourceManager.view.division.DetailController', {
             rec;
         
         if (form.isValid()) {
-            rec = this.getViewModel().getData().theAsset;
+            rec = this.getViewModel().getData().theDomainObject;
             // TODO: implement isolated sessions
             Ext.Msg.wait('Saving', 'Saving division...');
             rec.save({

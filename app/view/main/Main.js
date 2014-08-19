@@ -11,6 +11,7 @@ Ext.define('ResourceManager.view.main.Main', {
 		'Ext.layout.container.Border',
 		'ResourceManager.view.main.MainController',
 		'ResourceManager.view.main.MainModel',
+		'ResourceManager.view.dashboard.View',
 	
 		'ResourceManager.view.asset.List',
 		'ResourceManager.view.asset.Detail',
@@ -70,6 +71,7 @@ Ext.define('ResourceManager.view.main.Main', {
 		        store: 'AssetList',
 		        displayField: 'uniqueName',
 		        reference: 'mainSearch',
+		        width:"100%",
 		        minChars: 1,
 		        listConfig: {
 		            loadingText: 'Searching...',
@@ -82,22 +84,23 @@ Ext.define('ResourceManager.view.main.Main', {
 		    {
 		        xtype: 'grid',
 		        hideHeaders: true,
-		        disableSelection:true,
 		        store : 'MenuItems',
+		        listeners:{
+		        	rowclick:'onClickMenuItem'
+		        },
 		        columns: [{
 		            dataIndex: 'title',
 		            flex: 1
 		        }, {
 		            xtype: 'actioncolumn',
 		            width: 40,
-		            stopSelection: false,
 		            items: [{
 		                tooltip: 'Search items',
 		                handler: 'onOpenSearch',
 		                iconCls: 'x-grid-filters-find'
 		            },{
-		                tooltip: 'Open list',
-		                handler: 'onOpenMenuItem',
+		                tooltip: 'Create new domain object',
+		                handler: 'onCreateDomainObject',
 		                iconCls: 'x-toolbar-more-icon'
 		            }]
 		        }]
@@ -107,32 +110,45 @@ Ext.define('ResourceManager.view.main.Main', {
 	        collapsible: false,
 	        margin: '5 0 0 0',
 	        xtype: 'tabpanel',
-	        id: 'myTabpanel',//TODO:use reference, not id
+	        id: 'myTabpanel',
 	        reference: 'main',
+	        defaults:{
+	       		closable:true
+	        },
 	        items:[
+			{
+			    xtype: 'dashboard',
+			    closable: false
+			},
 		
 		{
-            xtype: 'assetgridlist'
+            xtype: 'assetgridlist',
+            itemId: 'assetgridlist_tab'
         },
 	
 		{
-            xtype: 'divisiongridlist'
+            xtype: 'divisiongridlist',
+            itemId: 'divisiongridlist_tab'
         },
 	
 		{
-            xtype: 'laborforcegridlist'
+            xtype: 'laborforcegridlist',
+            itemId: 'laborforcegridlist_tab'
         },
 	
 		{
-            xtype: 'stringtestgridlist'
+            xtype: 'stringtestgridlist',
+            itemId: 'stringtestgridlist_tab'
         },
 	
 		{
-            xtype: 'typetestgridlist'
+            xtype: 'typetestgridlist',
+            itemId: 'typetestgridlist_tab'
         },
 	
 		{
-            xtype: 'workergridlist'
+            xtype: 'workergridlist',
+            itemId: 'workergridlist_tab'
         },
 	
 		]

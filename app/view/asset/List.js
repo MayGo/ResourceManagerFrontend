@@ -1,66 +1,42 @@
 
 
 Ext.define('ResourceManager.view.asset.List', {
-	extend : 'Ext.grid.Panel',
-	requires : 'Ext.grid.filters.Filters',
+	extend : 'ResourceManager.view.BaseRestGrid',
 	xtype : 'assetgridlist',
 	store : 'AssetList',
-	columnLines : true,
-	height : 400,
-	width : 910,
 	title : 'Asset',
-	multiColumnSort : true,
-	multiSelect: true,
 	requires : ['ResourceManager.view.asset.ListController'],
-
 	controller : 'assetlist',
-	selModel : { 
-		pruneRemoved: false,
-		listeners : {
-			selectionchange : 'onSelectionChangeListener'
-		}
-	},
 	
-	
-
+	initComponent: function() {
+    	this.columns =this.defaultColumns.concat(this.columns);
+        this.callParent();
+    },
+    
 	columns : [
-	{
-		xtype : 'rownumberer',
-		width : 40,
-		sortable : false
-	}, {
-		text : 'ID',
-		width : 50,
-		sortable : true,
-		dataIndex : 'id',
-		renderer : function(v, meta, rec) {
-			return rec.phantom ? '' : v;
-		}
-	},
 	
-
-	{
-		text : 'Name',
-		sortable : true,
-		dataIndex : 'name',
-		groupable : true,
-		flex: 1,
-		
+		{
+			text : 'Name',
+			sortable : true,
+			dataIndex : 'name',
+			groupable : true,
+			flex: 1,
+			
 		editor : {
 			xtype : 'textfield'
 		}
 		
 
-		
-	},
+			
+		},
 
-	{
-		text : 'Valid From',
-		sortable : true,
-		dataIndex : 'validFrom',
-		groupable : true,
-		flex: 1,
-		
+		{
+			text : 'Valid From',
+			sortable : true,
+			dataIndex : 'validFrom',
+			groupable : true,
+			flex: 1,
+			
 		 	xtype: 'datecolumn',   
 		 	format:'Y-m-d',
 			editor : {
@@ -69,16 +45,16 @@ Ext.define('ResourceManager.view.asset.List', {
 			}
 			
 
-		
-	},
+			
+		},
 
-	{
-		text : 'Valid To',
-		sortable : true,
-		dataIndex : 'validTo',
-		groupable : true,
-		flex: 1,
-		
+		{
+			text : 'Valid To',
+			sortable : true,
+			dataIndex : 'validTo',
+			groupable : true,
+			flex: 1,
+			
 		 	xtype: 'datecolumn',   
 		 	format:'Y-m-d',
 			editor : {
@@ -87,16 +63,16 @@ Ext.define('ResourceManager.view.asset.List', {
 			}
 			
 
-		
-	},
+			
+		},
 
-	{
-		text : 'Division',
-		sortable : true,
-		dataIndex : 'division',
-		groupable : true,
-		flex: 1,
-		
+		{
+			text : 'Division',
+			sortable : true,
+			dataIndex : 'division',
+			groupable : true,
+			flex: 1,
+			
 			  renderer: function (value, metaData) {
 					return (value)?'Object id: ' +value.id:'';
 			  },
@@ -109,48 +85,8 @@ Ext.define('ResourceManager.view.asset.List', {
 			  }
 			
 
-		
-	},
+			
+		},
 
-],
-	dockedItems : [{
-		dock: 'top',
-		xtype : 'toolbar',
-		items : [{
-                width: 400,
-                fieldLabel: 'Search',
-                labelWidth: 50,
-                xtype: 'searchfield',
-                store: 'AssetList'
-            }, '->', {
-                xtype: 'component',
-                itemId: 'status',
-                tpl: 'Matching threads: {count}',
-                style: 'margin-right:5px'
-            },{
-    			text : 'Add',
-    			iconCls : 'icon-add',
-    			handler : 'addItemHandler'
-    		}, '-', {
-    			itemId : 'delete',
-    			text : 'Delete',
-    			iconCls : 'icon-delete',
-    			disabled : true,
-    			handler : 'deleteItemHandler'
-    		}
-		]
-	},
-	{
-        xtype: 'pagingtoolbar',
-        store: 'AssetList',   // same store GridPanel is using
-        dock: 'bottom',
-        displayInfo: true
-    }],
-	viewConfig : {
-		stripeRows : true
-	},
-	plugins : [{
-		ptype : 'rowediting',
-		pluginId : 'rowediting'
-	}]
+	]
 });

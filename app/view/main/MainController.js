@@ -30,19 +30,24 @@ Ext.define('ResourceManager.view.main.MainController', {
 
         tabs.setActiveTab(tab);
     },
-    onOpenMenuItem: function (view, rowIdx, colIdx, item, e, rec) {
-    	var title = rec.data['title'];
+    onClickMenuItem: function ( view, rec, colIdx, rowIdx, e, eOpts ){
+     	var title = rec.data['title'];
     	var xtype = this.domainListXtype(title);
         this.createTab(xtype, null, {
         	title: title,
             xtype: xtype
         });
-    },
+     },
+    
     onSearchSelect: function( combo, records, eOpts ){
-		var rec = records[0];
-		var title = rec.getDomainName();
-    	var xtype = this.domainDetailXtype(title);
-        this.createTab(title, rec, {
+    	 var rec = records[0];
+	     this.openDomainDetailTab(rec);
+	},	
+	
+	openDomainDetailTab: function(rec){
+		var domain = rec.getDomainName();
+    	var xtype = this.domainDetailXtype(domain);
+        this.createTab(domain, rec, {
             xtype: xtype,
             session: new Ext.data.Session({
                 data: [rec]
@@ -53,21 +58,28 @@ Ext.define('ResourceManager.view.main.MainController', {
                 }
             }
         });
-	},	
+	},
 	
 	onOpenSearch : function (view, rowIdx, colIdx, item, e, rec) {
 		e.preventDefault();
     	var domain = rec.data['title'];
     	var searchBox = this.lookupReference('mainSearch');
-    	searchBox.bindStore(domain+"List");
+    	searchBox.bindStore(domain + "List");
 		searchBox.expand();
     },
-
+    
+    onCreateDomainObject: function (view, rowIdx, colIdx, item, e, rec) {
+    	var domain = rec.data['title'];
+    	var newRecord = Ext.create('ResourceManager.model.' + domain);
+	    this.openDomainDetailTab(newRecord);
+    },
+    
 	domainListXtype:function(domainName){
-		return  Ext.util.Format.lowercase(domainName)+"gridlist";
+		return  Ext.util.Format.lowercase(domainName) + "gridlist";
 	},	
+	
 	domainDetailXtype:function(domainName){
-		return  Ext.util.Format.lowercase(domainName)+"detail";
+		return  Ext.util.Format.lowercase(domainName) + "detail";
 	}
 
 });
