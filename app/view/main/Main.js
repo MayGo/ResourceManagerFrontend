@@ -13,16 +13,22 @@ Ext.define('ResourceManager.view.main.Main', {
 		'ResourceManager.view.main.MainModel',
 	
 		'ResourceManager.view.asset.List',
+		'ResourceManager.view.asset.Detail',
 	
 		'ResourceManager.view.division.List',
+		'ResourceManager.view.division.Detail',
 	
 		'ResourceManager.view.laborforce.List',
+		'ResourceManager.view.laborforce.Detail',
 	
 		'ResourceManager.view.stringTest.List',
+		'ResourceManager.view.stringTest.Detail',
 	
 		'ResourceManager.view.typeTest.List',
+		'ResourceManager.view.typeTest.Detail',
 	
 		'ResourceManager.view.worker.List',
+		'ResourceManager.view.worker.Detail',
 	
 	],
 
@@ -62,7 +68,8 @@ Ext.define('ResourceManager.view.main.Main', {
 		    items:[{
 		        xtype: 'combo',
 		        store: 'AssetList',
-		        displayField: 'name',
+		        displayField: 'uniqueName',
+		        reference: 'mainSearch',
 		        minChars: 1,
 		        listConfig: {
 		            loadingText: 'Searching...',
@@ -75,18 +82,23 @@ Ext.define('ResourceManager.view.main.Main', {
 		    {
 		        xtype: 'grid',
 		        hideHeaders: true,
+		        disableSelection:true,
 		        store : 'MenuItems',
 		        columns: [{
 		            dataIndex: 'title',
 		            flex: 1
 		        }, {
 		            xtype: 'actioncolumn',
-		            width: 20,
-		            handler: 'onProjectSearchClick',
+		            width: 40,
 		            stopSelection: false,
 		            items: [{
-		                tooltip: 'Search tickets',
-		                iconCls: 'search'
+		                tooltip: 'Search items',
+		                handler: 'onOpenSearch',
+		                iconCls: 'x-grid-filters-find'
+		            },{
+		                tooltip: 'Open list',
+		                handler: 'onOpenMenuItem',
+		                iconCls: 'x-toolbar-more-icon'
 		            }]
 		        }]
 		    }]
@@ -95,32 +107,32 @@ Ext.define('ResourceManager.view.main.Main', {
 	        collapsible: false,
 	        margin: '5 0 0 0',
 	        xtype: 'tabpanel',
-	        id: 'myTabpanel',
+	        id: 'myTabpanel',//TODO:use reference, not id
 	        reference: 'main',
 	        items:[
 		
 		{
-            xtype: 'assetlist-grid'
+            xtype: 'assetgridlist'
         },
 	
 		{
-            xtype: 'divisionlist-grid'
+            xtype: 'divisiongridlist'
         },
 	
 		{
-            xtype: 'laborforcelist-grid'
+            xtype: 'laborforcegridlist'
         },
 	
 		{
-            xtype: 'stringTestlist-grid'
+            xtype: 'stringtestgridlist'
         },
 	
 		{
-            xtype: 'typeTestlist-grid'
+            xtype: 'typetestgridlist'
         },
 	
 		{
-            xtype: 'workerlist-grid'
+            xtype: 'workergridlist'
         },
 	
 		]

@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.worker.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'workerlist-grid',
+	xtype : 'workergridlist',
 	store : 'WorkerList',
 	columnLines : true,
 	height : 400,

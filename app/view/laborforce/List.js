@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.laborforce.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'laborforcelist-grid',
+	xtype : 'laborforcegridlist',
 	store : 'LaborforceList',
 	columnLines : true,
 	height : 400,

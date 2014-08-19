@@ -1,6 +1,6 @@
 Ext.define('ResourceManager.view.stringTest.ListController', {
 	extend : 'Ext.app.ViewController',
-	alias : 'controller.stringTestlist',
+	alias : 'controller.stringtestlist',
 
 	// Used as an editRenderer by BigData to display an uneditable field in the RowEditor
 	bold : function(v) {

@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.asset.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'assetlist-grid',
+	xtype : 'assetgridlist',
 	store : 'AssetList',
 	columnLines : true,
 	height : 400,

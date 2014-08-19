@@ -7,7 +7,14 @@ Ext.define('ResourceManager.model.Base', {
 	fields : [{
 		name : 'id',
 		type : 'int'
-	}],
+	}, {
+		name : 'uniqueName',
+		type : 'string',
+		convert : function(newValue, model) {
+			return Ext.getDisplayName(model).split(".").pop() + " " + model.get('id');
+		}
+	}
+	],
 	schema : {
 		namespace : 'ResourceManager.model',
 
@@ -23,7 +30,8 @@ Ext.define('ResourceManager.model.Base', {
 			limitParam:'max'
 		}
 	},
-	getUniqueName:function(){
-		return Ext.getDisplayName(this).split(".").pop() + " " + this.getId()
+	getDomainName:function(){
+		return Ext.getDisplayName(this).split(".").pop();
 	}
+
 });

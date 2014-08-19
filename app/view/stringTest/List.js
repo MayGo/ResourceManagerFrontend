@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.stringTest.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'stringTestlist-grid',
+	xtype : 'stringtestgridlist',
 	store : 'StringTestList',
 	columnLines : true,
 	height : 400,
@@ -13,7 +13,7 @@ Ext.define('ResourceManager.view.stringTest.List', {
 	multiSelect: true,
 	requires : ['ResourceManager.view.stringTest.ListController'],
 
-	controller : 'stringTestlist',
+	controller : 'stringtestlist',
 	selModel : { 
 		pruneRemoved: false,
 		listeners : {

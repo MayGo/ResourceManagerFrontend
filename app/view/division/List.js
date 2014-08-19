@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.division.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'divisionlist-grid',
+	xtype : 'divisiongridlist',
 	store : 'DivisionList',
 	columnLines : true,
 	height : 400,

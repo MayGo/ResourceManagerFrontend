@@ -3,7 +3,7 @@
 Ext.define('ResourceManager.view.typeTest.List', {
 	extend : 'Ext.grid.Panel',
 	requires : 'Ext.grid.filters.Filters',
-	xtype : 'typeTestlist-grid',
+	xtype : 'typetestgridlist',
 	store : 'TypeTestList',
 	columnLines : true,
 	height : 400,
@@ -13,7 +13,7 @@ Ext.define('ResourceManager.view.typeTest.List', {
 	multiSelect: true,
 	requires : ['ResourceManager.view.typeTest.ListController'],
 
-	controller : 'typeTestlist',
+	controller : 'typetestlist',
 	selModel : { 
 		pruneRemoved: false,
 		listeners : {
