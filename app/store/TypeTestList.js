@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.TypeTestList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.typetestlist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.TypeTest',
 	autoLoad : true,

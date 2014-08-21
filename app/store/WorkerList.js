@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.WorkerList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.workerlist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Worker',
 	autoLoad : true,

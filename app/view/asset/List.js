@@ -79,9 +79,8 @@ Ext.define('ResourceManager.view.asset.List', {
 			  editor : {
 				  xtype : 'combo',
 				  valueField: 'id',
-				  tpl:'<tpl for="."><div class="x-boundlist-item" >Object id: {id}</div></tpl>',
-				  displayTpl: '<tpl for=".">Object id: {id}</tpl>',
-				  store: 'DivisionList',
+				  displayField: 'uniqueName',
+				  store: {type:'divisionlist'},
 			  }
 			
 

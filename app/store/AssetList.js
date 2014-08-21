@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.AssetList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.assetlist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Asset',
 	autoLoad : true,

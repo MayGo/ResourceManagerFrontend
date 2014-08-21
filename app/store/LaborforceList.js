@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.LaborforceList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.laborforcelist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Laborforce',
 	autoLoad : true,

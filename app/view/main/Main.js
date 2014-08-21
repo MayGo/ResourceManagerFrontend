@@ -66,7 +66,7 @@ Ext.define('ResourceManager.view.main.Main', {
 		    maxWidth: 250,
 		    items:[{
 		        xtype: 'combo',
-		        store: 'AssetList',
+		        store: {type:'assetlist'},
 		        displayField: 'uniqueName',
 		        reference: 'mainSearch',
 		        width:"100%",

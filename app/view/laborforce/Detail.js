@@ -40,9 +40,8 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 				
 				  xtype : 'combo',
 				  valueField: 'id',
-				  tpl:'<tpl for="."><div class="x-boundlist-item" >Object id: {id}</div></tpl>',
-				  displayTpl: '<tpl for=".">Object id: {id}</tpl>',
-				  store: 'WorkerList',
+  				  displayField: 'uniqueName',
+				  store: {type:'workerlist'},
 			
 
 				
@@ -82,9 +81,8 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 				
 				  xtype : 'combo',
 				  valueField: 'id',
-				  tpl:'<tpl for="."><div class="x-boundlist-item" >Object id: {id}</div></tpl>',
-				  displayTpl: '<tpl for=".">Object id: {id}</tpl>',
-				  store: 'AssetList',
+  				  displayField: 'uniqueName',
+				  store: {type:'assetlist'},
 			
 
 				
@@ -98,9 +96,8 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 				
 				  xtype : 'combo',
 				  valueField: 'id',
-				  tpl:'<tpl for="."><div class="x-boundlist-item" >Object id: {id}</div></tpl>',
-				  displayTpl: '<tpl for=".">Object id: {id}</tpl>',
-				  store: 'DivisionList',
+  				  displayField: 'uniqueName',
+				  store: {type:'divisionlist'},
 			
 
 				

@@ -32,7 +32,6 @@ Ext.define('ResourceManager.Application', {
 	
 		'WorkerList',
 	
-        // TODO: add stores here
     ],
     
     launch: function () {

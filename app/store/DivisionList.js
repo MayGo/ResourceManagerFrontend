@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.DivisionList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.divisionlist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Division',
 	autoLoad : true,

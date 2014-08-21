@@ -1,5 +1,6 @@
 Ext.define('ResourceManager.store.StringTestList', {
 	extend : 'Ext.data.Store',
+	alias: 'store.stringtestlist',
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.StringTest',
 	autoLoad : true,
