@@ -24,7 +24,7 @@ Ext.define('ResourceManager.view.BaseRestGrid', {
         items: [{
             tooltip: 'Open domain object',
             handler: 'openDomainObjectInTab',
-            iconCls: 'x-toolbar-more-icon'
+            icon: 'resources/images/edit.png'
         }]
     }, {
 		text : 'ID',
@@ -48,12 +48,12 @@ Ext.define('ResourceManager.view.BaseRestGrid', {
 				store: this.store
 			}, '->', {
 				text : 'Add',
-				iconCls : 'icon-add',
+				icon: 'resources/images/add.png',
 				handler : 'addItemHandler'
 			}, '-', {
 				itemId : 'delete',
 				text : 'Delete',
-				iconCls : 'icon-delete',
+				icon: 'resources/images/delete.png',
 				disabled : true,
 				handler : 'deleteItemHandler'
 			}]
