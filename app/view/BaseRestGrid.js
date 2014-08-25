@@ -18,7 +18,15 @@ Ext.define('ResourceManager.view.BaseRestGrid', {
 		xtype : 'rownumberer',
 		width : 40,
 		sortable : false
-	}, {
+	},  {
+        xtype: 'actioncolumn',
+        width: 25,
+        items: [{
+            tooltip: 'Open domain object',
+            handler: 'openDomainObjectInTab',
+            iconCls: 'x-toolbar-more-icon'
+        }]
+    }, {
 		text : 'ID',
 		width : 50,
 		sortable : true,
