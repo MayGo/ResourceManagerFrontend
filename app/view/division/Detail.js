@@ -35,8 +35,9 @@ Ext.define('ResourceManager.view.division.Detail', {
 			{
 	            fieldLabel: 'Name',
 	            name:'name',
+	            
 	            bind: '{theDomainObject.name}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -47,8 +48,9 @@ Ext.define('ResourceManager.view.division.Detail', {
 			{
 	            fieldLabel: 'Head Division',
 	            name:'headDivision',
-	            bind: '{theDomainObject.headDivision}',
-
+	            
+	            bind: '{theDomainObject.headDivision.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',
@@ -62,8 +64,9 @@ Ext.define('ResourceManager.view.division.Detail', {
 			{
 	            fieldLabel: 'Id Trail',
 	            name:'idTrail',
+	            
 	            bind: '{theDomainObject.idTrail}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -74,8 +77,9 @@ Ext.define('ResourceManager.view.division.Detail', {
 			{
 	            fieldLabel: 'Name Trail',
 	            name:'nameTrail',
+	            
 	            bind: '{theDomainObject.nameTrail}',
-
+	            
 				
 			xtype : 'textfield'
 		

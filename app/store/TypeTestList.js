@@ -4,7 +4,7 @@ Ext.define('ResourceManager.store.TypeTestList', {
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.TypeTest',
 	autoLoad : true,
-	autoSync : true,
+	autoSync : false,
 	pageSize : 50,
 	remoteFilter : true,
 	

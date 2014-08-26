@@ -35,8 +35,9 @@ Ext.define('ResourceManager.view.worker.Detail', {
 			{
 	            fieldLabel: 'Name',
 	            name:'name',
+	            
 	            bind: '{theDomainObject.name}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -47,8 +48,9 @@ Ext.define('ResourceManager.view.worker.Detail', {
 			{
 	            fieldLabel: 'Id Code',
 	            name:'idCode',
+	            
 	            bind: '{theDomainObject.idCode}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -59,8 +61,9 @@ Ext.define('ResourceManager.view.worker.Detail', {
 			{
 	            fieldLabel: 'Division',
 	            name:'division',
-	            bind: '{theDomainObject.division}',
-
+	            
+	            bind: '{theDomainObject.division.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',

@@ -35,8 +35,9 @@ Ext.define('ResourceManager.view.asset.Detail', {
 			{
 	            fieldLabel: 'Name',
 	            name:'name',
+	            
 	            bind: '{theDomainObject.name}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -47,8 +48,9 @@ Ext.define('ResourceManager.view.asset.Detail', {
 			{
 	            fieldLabel: 'Valid From',
 	            name:'validFrom',
+	            
 	            bind: '{theDomainObject.validFrom}',
-
+	            
 				 	
 				xtype : 'datefield',
 		 		format: 'Y-m-d',
@@ -60,8 +62,9 @@ Ext.define('ResourceManager.view.asset.Detail', {
 			{
 	            fieldLabel: 'Valid To',
 	            name:'validTo',
+	            
 	            bind: '{theDomainObject.validTo}',
-
+	            
 				 	
 				xtype : 'datefield',
 		 		format: 'Y-m-d',
@@ -73,8 +76,9 @@ Ext.define('ResourceManager.view.asset.Detail', {
 			{
 	            fieldLabel: 'Division',
 	            name:'division',
-	            bind: '{theDomainObject.division}',
-
+	            
+	            bind: '{theDomainObject.division.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',

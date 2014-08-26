@@ -4,7 +4,7 @@ Ext.define('ResourceManager.store.AssetList', {
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Asset',
 	autoLoad : true,
-	autoSync : true,
+	autoSync : false,
 	pageSize : 50,
 	remoteFilter : true,
 	

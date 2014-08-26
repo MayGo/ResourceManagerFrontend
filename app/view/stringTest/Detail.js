@@ -35,8 +35,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Not Nullable Nor Blank',
 	            name:'notNullableNorBlank',
+	            
 	            bind: '{theDomainObject.notNullableNorBlank}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -47,8 +48,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Email',
 	            name:'testEmail',
+	            
 	            bind: '{theDomainObject.testEmail}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -59,8 +61,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Credit Card',
 	            name:'testCreditCard',
+	            
 	            bind: '{theDomainObject.testCreditCard}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -71,8 +74,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Size',
 	            name:'testSize',
+	            
 	            bind: '{theDomainObject.testSize}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -83,8 +87,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Max Size',
 	            name:'testMaxSize',
+	            
 	            bind: '{theDomainObject.testMaxSize}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -95,8 +100,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Url',
 	            name:'testUrl',
+	            
 	            bind: '{theDomainObject.testUrl}',
-
+	            
 				
 			xtype : 'textfield'
 		
@@ -107,8 +113,9 @@ Ext.define('ResourceManager.view.stringTest.Detail', {
 			{
 	            fieldLabel: 'Test Not Equal',
 	            name:'testNotEqual',
+	            
 	            bind: '{theDomainObject.testNotEqual}',
-
+	            
 				
 			xtype : 'textfield'
 		

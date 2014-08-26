@@ -35,8 +35,9 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 			{
 	            fieldLabel: 'Worker',
 	            name:'worker',
-	            bind: '{theDomainObject.worker}',
-
+	            
+	            bind: '{theDomainObject.worker.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',
@@ -50,8 +51,9 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 			{
 	            fieldLabel: 'Valid From',
 	            name:'validFrom',
+	            
 	            bind: '{theDomainObject.validFrom}',
-
+	            
 				 	
 				xtype : 'datefield',
 		 		format: 'Y-m-d',
@@ -63,8 +65,9 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 			{
 	            fieldLabel: 'Valid To',
 	            name:'validTo',
+	            
 	            bind: '{theDomainObject.validTo}',
-
+	            
 				 	
 				xtype : 'datefield',
 		 		format: 'Y-m-d',
@@ -76,8 +79,9 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 			{
 	            fieldLabel: 'Asset',
 	            name:'asset',
-	            bind: '{theDomainObject.asset}',
-
+	            
+	            bind: '{theDomainObject.asset.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',
@@ -91,8 +95,9 @@ Ext.define('ResourceManager.view.laborforce.Detail', {
 			{
 	            fieldLabel: 'Division',
 	            name:'division',
-	            bind: '{theDomainObject.division}',
-
+	            
+	            bind: '{theDomainObject.division.id}',
+	            
 				
 				  xtype : 'combo',
 				  valueField: 'id',

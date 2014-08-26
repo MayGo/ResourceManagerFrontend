@@ -4,7 +4,7 @@ Ext.define('ResourceManager.store.DivisionList', {
 	requires : [ 'Ext.data.proxy.Rest' ],
 	model : 'ResourceManager.model.Division',
 	autoLoad : true,
-	autoSync : true,
+	autoSync : false,
 	pageSize : 50,
 	remoteFilter : true,
 	
